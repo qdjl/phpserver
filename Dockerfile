@@ -46,8 +46,7 @@ ADD bin /bin
 WORKDIR /app/wwwroot
 RUN chmod a+x /bin/start.sh /bin/install.sh
 RUN /bin/install.sh
-RUN echo "" > .env
-RUN chmod a+rwx /app/wwwroot/runtime
+
 
 ENV VERSION 1
 ENV PATH "/app:$PATH"
