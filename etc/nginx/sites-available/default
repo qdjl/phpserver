@@ -28,18 +28,18 @@ server {
 #	ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
 #	ssl_prefer_server_ciphers on;
 
-	root /app/wwwroot;
-#	root /app/wwwroot/public;
+#	root /app/wwwroot;
+	root /app/wwwroot/public;
 
 	index index.php index.html index.htm;
 
 	server_name _;
 
 	location / {
-        try_files $uri $uri/ /index.php?$args;
-#		if (!-e $request_filename) {
-#			rewrite  ^(.*)$  /index.php?s=/$1  last;
-#		}
+#        try_files $uri $uri/ /index.php?$args;
+		if (!-e $request_filename) {
+			rewrite  ^(.*)$  /index.php?s=/$1  last;
+		}
 	}
 
 
