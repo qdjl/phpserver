@@ -42,6 +42,7 @@ RUN apt-get update -y \
 ADD etc /etc
 ADD src /app/wwwroot
 ADD bin /bin
+ADD ext /usr/lib/php/20170718
 
 WORKDIR /app/wwwroot
 RUN chmod a+x /bin/start.sh /bin/install.sh
